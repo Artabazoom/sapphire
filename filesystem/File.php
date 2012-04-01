@@ -573,7 +573,7 @@ class File extends DataObject {
 		if(!$name) $name = 'new-folder';
 
 		// If it's changed, check for duplicates
-		if($oldName && $oldName != $name) {
+		if($oldName && (strtolower( $oldName) != strtolower($name)) ) {
 			$base = pathinfo($name, PATHINFO_BASENAME);
 			$ext = self::get_file_extension($name);
 			$suffix = 1;
